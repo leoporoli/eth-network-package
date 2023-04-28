@@ -1,10 +1,10 @@
-shared_utils = import_module("github.com/kurtosis-tech/eth-network-package/shared_utils/shared_utils.star")
-input_parser = import_module("github.com/kurtosis-tech/eth-network-package/package_io/input_parser.star")
-cl_client_context = import_module("github.com/kurtosis-tech/eth-network-package/src/cl/cl_client_context.star")
-cl_node_metrics = import_module("github.com/kurtosis-tech/eth-network-package/src/cl/cl_node_metrics_info.star")
-cl_node_health_checker = import_module("github.com/kurtosis-tech/eth-network-package/src/cl/cl_node_health_checker.star")
+shared_utils = import_module("github.com/leoporoli/eth-network-package/shared_utils/shared_utils.star")
+input_parser = import_module("github.com/leoporoli/eth-network-package/package_io/input_parser.star")
+cl_client_context = import_module("github.com/leoporoli/eth-network-package/src/cl/cl_client_context.star")
+cl_node_metrics = import_module("github.com/leoporoli/eth-network-package/src/cl/cl_node_metrics_info.star")
+cl_node_health_checker = import_module("github.com/leoporoli/eth-network-package/src/cl/cl_node_health_checker.star")
 
-package_io = import_module("github.com/kurtosis-tech/eth-network-package/package_io/constants.star")
+package_io = import_module("github.com/leoporoli/eth-network-package/package_io/constants.star")
 
 LIGHTHOUSE_BINARY_COMMAND = "lighthouse"
 
@@ -36,7 +36,6 @@ VALIDATOR_HTTP_PORT_ID     = "http"
 VALIDATOR_METRICS_PORT_ID  = "metrics"
 VALIDATOR_HTTP_PORT_NUM    = 5042
 VALIDATOR_METRICS_PORT_NUM = 5064
-VALIDATOR_HTTP_PORT_WAIT_DISABLED = None
 
 METRICS_PATH = "/metrics"
 
@@ -53,7 +52,7 @@ BEACON_USED_PORTS = {
 }
 
 VALIDATOR_USED_PORTS = {
-	VALIDATOR_HTTP_PORT_ID:    shared_utils.new_port_spec(VALIDATOR_HTTP_PORT_NUM, shared_utils.TCP_PROTOCOL, shared_utils.NOT_PROVIDED_APPLICATION_PROTOCOL, VALIDATOR_HTTP_PORT_WAIT_DISABLED),
+	VALIDATOR_HTTP_PORT_ID:    shared_utils.new_port_spec(VALIDATOR_HTTP_PORT_NUM, shared_utils.TCP_PROTOCOL, shared_utils.NOT_PROVIDED_APPLICATION_PROTOCOL),
 	VALIDATOR_METRICS_PORT_ID: shared_utils.new_port_spec(VALIDATOR_METRICS_PORT_NUM, shared_utils.TCP_PROTOCOL, shared_utils.HTTP_APPLICATION_PROTOCOL),
 }
 
